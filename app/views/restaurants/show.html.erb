@@ -1,38 +1,30 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
   <div class="col-xs-12 col-sm-6">
-    <h1><%= @restaurant.name %></h1>
 
-    <p>
-      <strong>Address:</strong>
-      <%= @restaurant.address %>
-    </p>
+    <div id="content-restaurant">
+      <p id="notice"><%= notice %></p>
+      <h1><%= @restaurant.name %></h1>
+      <p>Address: <%= @restaurant.address %></p>
+      <p>Phone number: <%= @restaurant.phone_number %></p>
+      <p>Category: <%= @restaurant.category %></p>
+    </div>
 
-    <p>
-      <strong>Phone number:</strong>
-      <%= @restaurant.phone_number %>
-    </p>
+    <div id="review-restaurant">
+      <h4>Reviews:</h4>
+      <div>
+        <% @restaurant.reviews.each do |review| %>
+          <p><%= review.content %> - <%= review.rating %> / 5</p>
+        <% end %>
+      </div>
+    </div>
 
-    <p>
-      <strong>Category:</strong>
-      <%= @restaurant.category %>
-    </p>
-
-
-    <h4>Reviews:</h4>
-    <ul>
-      <% @restaurant.reviews.each do |review| %>
-        <li><%= review.content %> - <%= review.rating %> / 5</li>
-      <% end %>
-    </ul>
   </div>
 
   <div class="col-xs-12 col-sm-6">
     <div class='link'>
-          <%= link_to 'Edit restaurant info', edit_restaurant_path(@restaurant), class: 'btn-vale-success col-xs-offset-3 col-xs-6 text-center' %>
-          <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn-vale-success col-xs-offset-3 col-xs-6 text-center' %>
-          <%= link_to 'Delete this restaurant', restaurant_path, class: 'btn-vale-success col-xs-offset-3 col-xs-6 text-center', method: :delete, data: { confirm: 'Are you sure?',  } %>
+      <%= link_to 'Edit restaurant info', edit_restaurant_path(@restaurant), class: 'btn-vale-success col-xs-offset-3 col-xs-6 text-center' %>
+      <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn-vale-success col-xs-offset-3 col-xs-6 text-center' %>
+      <%= link_to 'Delete this restaurant', restaurant_path, class: 'btn-vale-success col-xs-offset-3 col-xs-6 text-center', method: :delete, data: { confirm: 'Are you sure?',  } %>
     </div>
   </div>
 </div>

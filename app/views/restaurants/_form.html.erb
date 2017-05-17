@@ -1,14 +1,18 @@
 <%= simple_form_for(@restaurant) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :phone_number %>
-    <%= f.input :category, collection: %w(chinese italian japanese french belgian) %>
+  <div class="row">
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category, collection: %w(chinese italian japanese french belgian) %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit :submit, class: 'btn-vale-success' %>
+  <div class="row text-right">
+      <div class="form-actions">
+        <%= f.submit :submit, class: 'btn-vale-success' %>
+      </div>
+    </div>
   </div>
 <% end %>

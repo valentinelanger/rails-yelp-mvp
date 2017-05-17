@@ -6,8 +6,10 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway|Roboto");
 
-
-// font-family: 'Montserrat', sans-serif;
+.container {
+  min-height: 100vh;
+  padding-top: 70px;
+}
 
 
 // Paddings
@@ -58,11 +60,14 @@ a {
   }
 }
 
-.back-possibility {
+.text-right {
   margin: 20px 0px 0px 0px;
   text-align: right;
 }
 
 .form-actions {
   text-align: right;
+  .btn-vale-success {
+    width: 200px;
+  }
 }

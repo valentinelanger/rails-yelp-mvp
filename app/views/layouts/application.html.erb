@@ -16,8 +16,17 @@
       <%= link_to 'La Fourchette', restaurants_path, class: 'text-navbar' %>
       <%= link_to 'Add New Restaurant', new_restaurant_path, class: 'btn btn-vale' %>
     </div>
-    <div class="container marged-for-navbar">
+
+    <div class="container">
       <%= yield %>
+    </div>
+
+    <div class="footer">
+      <ul>
+        <li>About</li>
+        <li>Team</li>
+        <li>Contact us</li>
+      </ul>
     </div>
   </body>
 </html>
