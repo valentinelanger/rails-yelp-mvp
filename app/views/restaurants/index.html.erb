@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center">Restaurants</h1>
+
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card-restaurant" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= restaurant.image_url %>');">
+              <h3 class="card-description">
+                <%= link_to restaurant.name, restaurant %>
+              </h3>
+              <p class="card-category"><%= restaurant.category %></p>
+            </div>
+          </div>
+    <% end %>
+  </div>
+</div>
+
